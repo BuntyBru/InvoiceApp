@@ -1,0 +1,201 @@
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Create New Invoice</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a>Order No <span> {{person.orderNumber}} </span></a></li>
+      </ul>
+     	
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+<div class="row">
+  
+  <div class="col-sm-6">
+    <h4></h4>
+  </div>
+  <div class="col-sm-6 text-right">
+  <h4>Customer Details</h4>
+  <h4> {{person.name}} </h4>
+  
+    
+  </div>
+
+</div>
+
+<div class="row">
+  <div class="col-sm-6">
+  <h4>PRODUCT DETAILS</h4>
+  </div>
+  <div class="col-sm-6 text-right">
+  <h4> {{person.email}} </h4>
+  </div>
+
+</div>
+
+  
+</div>
+<hr>
+
+<div class="row">
+
+<div class="col-sm-5">
+  <h4>ITEM</h4>
+</div>
+  
+<div class="col-sm-4">
+  <h4>QUANTITY</h4>
+</div>
+  
+<div class="col-sm-3">
+  <h4>PRICE/unit </h4>
+</div>
+  
+</div>
+<hr>
+
+
+
+
+
+<div class="row" *ngFor = "let invoiceItems of invoice2.invoiceList">
+<div class="col-sm-5">
+  <h5> {{invoiceItems.item}} </h5>
+</div>
+  
+<div class="col-sm-4">
+  <h5> {{invoiceItems.quantity}} </h5>
+</div>
+  
+<div class="col-sm-3">
+<h5> &#8377; {{invoiceItems.price}} </h5> 
+</div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+<form>
+<form (ngSubmit) = "onSubmit(f,k)" #f="ngForm">
+<div class="row">
+<div class="col-sm-5">
+  <input type="text" 
+   class="form-control"
+   ngModel
+   name="item"
+   required>
+</div>
+  
+<div class="col-sm-4">
+  <input type="number" class="form-control"
+  ngModel
+  name="quantity"
+  required>
+</div>
+  
+<div class="col-sm-2">
+  <input type="number" class="form-control"
+  ngModel
+   name="price"
+   required>
+  
+</div>
+<div class="col-sm-1">
+  <button class="btn btn-primary" type="submit" [disabled] = "!f.valid" >Submit</button>
+</div>
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+
+<div class="row">
+
+<div class="col-sm-2">
+   <div class="input-group">
+      <input id="tax" type="number" class="form-control"  placeholder="tax"
+      ngModel
+      name="tax"
+      required>
+      <span class="input-group-addon">%</span>
+      </div>
+</div>
+  
+<div class="col-sm-2">
+   <div class="input-group">
+      <input id="discount" type="number" class="form-control"  placeholder="discount"
+      ngModel
+      name="discount"
+      required>
+      <span class="input-group-addon">%</span>
+      </div>
+</div>
+
+<div class="col-sm-4 text-right" >
+  <h4>Sub Total</h4>
+  
+</div>
+<div class="col-sm-4 text-right" >
+  <h4> &#8377; {{subTotal}} </h4>
+  
+</div>
+</div>
+</form>
+
+
+ <footer>
+
+ <div class="row">
+  <div class="col-sm-2">
+    <h4><strong>Tax</strong></h4> 
+    <h4><strong> &#8377; {{tax}} </strong></h4>
+  </div>
+   
+   <div class="col-sm-2">
+    <h4><strong>Discount</strong></h4> 
+    <h4><strong> &#8377; {{discount}} </strong></h4>
+  </div>
+
+<div class="col-sm-4 text-right" >
+  <h4>Grand Total</h4>
+  <h4><strong> &#8377; {{grandTotal}}  </strong></h4>
+  
+</div>
+
+<div class="col-sm-4" >
+<button class="btn btn-primary form-control" type="submit" (click) = "onSave(f,k)" [disabled]= "!f.submitted" #k>SAVE</button>
+</div>
+
+
+
+
+
+ </div>
+
+</footer> 
+
+
+
+
+
+

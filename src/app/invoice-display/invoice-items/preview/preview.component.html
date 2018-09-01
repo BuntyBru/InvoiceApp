@@ -1,0 +1,109 @@
+<div *ngIf="selectedInvoice.SubTotal"  id = "printable">
+	<h4>INVOICE DETAILS</h4>
+	<div class="container2">
+		<div class="row">
+			<div class="col-sm-6 text-left">
+				<h5>
+					<strong>INVOICE</strong>
+				</h5>
+				<h5>#INV
+					<span>{{selectedInvoice.personAssociated?.orderNumber}}</span>
+				</h5>
+				<h5>{{selectedInvoice.timestamp | date:'h:mm a, EEEE'}}</h5>
+			</div>
+			<div class="col-sm-4 text-right">
+				<h5>CUSTOMER DETAILS</h5>
+				<h5>{{selectedInvoice.personAssociated?.name}}</h5>
+				<h5>{{selectedInvoice.personAssociated?.email}}</h5>
+			</div>
+
+			<div class="col-sm-2 text-center">
+				<button class="btn btn-primary" type="button">Print</button>
+			</div>
+
+
+		</div>
+
+		<hr>
+		<div class="row text-left">
+
+			<div class="col-sm-6">
+				<h5>ITEM</h5>
+			</div>
+
+			<div class="col-sm-3">
+				<h5>QUANTITY</h5>
+			</div>
+
+			<div class="col-sm-3">
+				<h5>PRICE/unit</h5>
+			</div>
+
+		</div>
+		<hr>
+
+
+		<div class="row" *ngFor="let item of selectedInvoice?.invoiceList">
+
+			<div class="col-sm-6">
+				<h5>{{item.item}}</h5>
+			</div>
+
+			<div class="col-sm-3">
+				<h5>{{item.quantity}}</h5>
+			</div>
+
+			<div class="col-sm-3">
+				<h5>&#8377; {{item.price}}</h5>
+			</div>
+		</div>
+
+		<hr>
+
+		<div class="row">
+			<div class="col-sm-12 text-right">
+				<div class="col-sm-8">
+					<h5>Sub Total</h5>
+				</div>
+				<div class="col-sm-4">
+					<h5>&#8377; {{selectedInvoice.SubTotal}}</h5>
+				</div>
+
+				<div class="col-sm-8">
+					<h5>Tax
+						<span>({{selectedInvoice.tax}}%)</span>
+					</h5>
+				</div>
+				<div class="col-sm-4">
+					<h5>&#8377; {{selectedInvoice.taxTotal}}</h5>
+				</div>
+
+
+				<div class="col-sm-8">
+					<h5>Discount
+						<span>({{selectedInvoice.discount}}%)</span>
+					</h5>
+				</div>
+				<div class="col-sm-4">
+					<h5> -&#8377; {{selectedInvoice.discountTotal}}</h5>
+				</div>
+
+
+
+				<div class="col-sm-8">
+					<br>
+					<h5>Grand Total</h5>
+				</div>
+
+				<div class="col-sm-4">
+					<br>
+					<h5>&#8377; {{selectedInvoice.GrandTotal}}</h5>
+				</div>
+
+			</div>
+
+
+
+
+		</div>
+	</div>

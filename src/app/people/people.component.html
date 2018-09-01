@@ -1,0 +1,107 @@
+
+
+<nav class="navbar">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="#">Create New Invoice</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li><a>Order No <span> {{orderNumber}} </span></a></li>
+      </ul>
+     	
+    </div>
+  </div>
+</nav>
+  <div>
+  <div class="col-sm-6">
+		<h4 class="text-left">CUSTOMER DETAILS</h4>  	
+  </div>
+  	
+  	<div class="col-sm-6">
+  		<button type="button" class="btn btn-primary" style="float: right;">Skip</button>
+  	</div>
+  </div>
+  <hr>
+  <hr>
+  <form (ngSubmit)="onProceed(pf)"  #pf = "ngForm">
+<div class="container-fluid text-right">    
+  
+  <div class="row content">
+   
+    <div class="col-sm-6 text-left"> 
+      
+      <br>
+      <div class="form-group">
+       	<label for="full-name">
+      		Full Name
+      	</label>
+      	<input type="text"  class="form-control"
+        ngModel
+        name="fullName"
+        required>
+      </div>
+
+      <div class="form-group">
+       	<label for="address">
+      		Address
+      	</label>
+      	<textarea type="text"
+		 id="address"
+		 class="form-control"
+		 rows="8"
+     ngModel
+     name="address"
+     required>
+			
+		</textarea> 
+      </div>
+    </div>
+      <div class="col-sm-6 text-left"> 
+      <br>
+      
+       <div class="form-group">
+       	<label for="phone">
+      		Phone
+      	</label>
+      	<input type="text" class="form-control"
+        ngModel
+        name="phone"
+        required>
+      </div>
+      <br>
+      <div class="form-group">
+       	<label for="email">
+      		Email ID
+      	</label>
+      	<input type="email" class="form-control"
+        ngModel
+         name="email" 
+         required>
+      </div>
+      <br>
+      <div class="form-group">
+       	<label for="pincode">
+      		Pin Code
+      	</label>
+      	<input type="text"  class="form-control"
+        ngModel
+        name="pincode"
+        required>
+      </div>
+   
+    </div>
+  
+  </div>
+ 
+</div>
+ <footer class="container" class="text-right">
+	<button type="submit" class="btn btn-primary"  [disabled] = "!pf.valid">Proceed</button>
+</footer> 
+
+</form> 

@@ -1,0 +1,24 @@
+/* Remove the navbar's default margin-bottom and rounded borders */ 
+    .navbar {
+      margin-bottom: 0;
+      border-radius: 0;
+    }
+    
+    
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color:  #e6eeff;
+      color: white;
+      padding: 15px;
+
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+    }

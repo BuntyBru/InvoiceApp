@@ -1,0 +1,33 @@
+<div class="row">
+	<div class="col-md-4">
+
+		<!--<a style="cursor: pointer;" class="list-group-item clearfix">
+			<div class="pull-left">
+				<h4 class="list-group-item-heading">INV # 122 </h4>
+				<p class="list-group-item-text">Items-05</p>
+				<p class="list-group-item-text">Owner Name</p>
+			</div>
+			<span class="pull-right">
+				<h4 class="list-group-item-heading">latest time</h4>
+				<br>
+				<p class="list-group-item-text">3509</p>
+			</span>
+		</a>-->
+		<div class="list-group-item clearfix" style="cursor:pointer" *ngFor="let invoice of listInvoice" (click)="onSelectInvoice(invoice)">
+			<div class="pull-left">
+				<h4 class="list-group-item-heading">INV # {{ invoice.personAssociated.orderNumber }} </h4>
+				<p class="list-group-item-text">Items - {{invoice.invoiceList.length}}</p>
+				<p class="list-group-item-text">{{invoice.personAssociated.name}}</p>
+			</div>
+			<span class="pull-right">
+				<h5 class="list-group-item-heading"> {{invoice.timestamp | date:'h:mm a,EEEE'}} </h5>
+				<br>
+				<p class="list-group-item-text"> &#8377; {{invoice.GrandTotal}}</p>
+			</span>
+		</div>
+	</div>
+
+	<div class="col-md-8">
+		<app-preview [selectedInvoice]="selectedInvoice"></app-preview>
+	</div>
+</div>
