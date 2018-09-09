@@ -18,6 +18,7 @@ export class InvoiceItemsComponent implements OnInit {
   listInvoice: Invoice[];
   selectedInvoice:Invoice = new Invoice();
   clickStatus=false;
+  i:number;
   
   constructor(private dataService:DataService) {
       this.listInvoice = this.dataService.listInvoice;
@@ -30,6 +31,18 @@ export class InvoiceItemsComponent implements OnInit {
     this.selectedInvoice = invoice;
     this.selectedInvoice = Object.assign({},this.selectedInvoice);
     this.clickStatus = true;
+
+    let k = document.getElementsByClassName('itemInvoice');
+
+//for (this.i=0;this.i<this.listInvoice.length;this.i++)
+//{
+  //  k[this.i].classList.remove('active1');
+//}
+
+
+
+
+
   }
   ngOnChanges(changes: SimpleChanges) {
     if (changes.listInvoice && changes.listInvoice.currentValue) {

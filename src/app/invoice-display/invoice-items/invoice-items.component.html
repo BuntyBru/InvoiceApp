@@ -15,7 +15,7 @@
 				<p class="list-group-item-text">3509</p>
 			</span>
 		</a>-->
-		<div class="list-group-item clearfix" style="cursor:pointer" *ngFor="let invoice of listInvoice" (click)="onSelectInvoice(invoice)">
+		<a class="list-group-item clearfix itemInvoice" routerLinkActive="active1" style="cursor:pointer" *ngFor="let invoice of listInvoice" (click)="onSelectInvoice(invoice)" routerLink="/invoice-display">
 		
 			<div class="pull-left">
 				<h4 class="list-group-item-heading"><strong>INV # {{ invoice.personAssociated.orderNumber }} </strong></h4>
@@ -27,7 +27,7 @@
 				<br>
 				<p class="list-group-item-text grandTotal"> &#8377; {{invoice.GrandTotal}}</p>
 			</span>
-		</div>
+		</a>
 
 	</div>
 
