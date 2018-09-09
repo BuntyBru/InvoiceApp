@@ -9,16 +9,16 @@
 				<h5>#INV
 					<span>{{selectedInvoice.personAssociated?.orderNumber}}</span>
 				</h5>
-				<h5>{{selectedInvoice.timestamp | date:'h:mm a, EEEE'}}</h5>
+				<h5>{{selectedInvoice.timestamp | date:'EEEE, MMMM d, y'}}</h5>
 			</div>
 			<div class="col-sm-4 text-right">
-				<h5>CUSTOMER DETAILS</h5>
+				<h5><strong><u>CUSTOMER DETAILS</u></strong></h5>
 				<h5>{{selectedInvoice.personAssociated?.name}}</h5>
 				<h5>{{selectedInvoice.personAssociated?.email}}</h5>
 			</div>
 
 			<div class="col-sm-2 text-center">
-				<button class="btn btn-primary" type="button">Print</button>
+				<button class="btn btn-primary" type="button"  ng-click="printDiv('printableArea');">Print</button>
 			</div>
 
 
@@ -28,15 +28,15 @@
 		<div class="row text-left">
 
 			<div class="col-sm-6">
-				<h5>ITEM</h5>
+				<h5><u>ITEM</u></h5>
 			</div>
 
 			<div class="col-sm-3">
-				<h5>QUANTITY</h5>
+				<h5><u>QUANTITY</u></h5>
 			</div>
 
 			<div class="col-sm-3">
-				<h5>PRICE/unit</h5>
+				<h5><u>PRICE/unit</u></h5>
 			</div>
 
 		</div>
@@ -106,4 +106,6 @@
 
 
 		</div>
+	</div>
+
 	</div>

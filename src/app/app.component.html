@@ -1,13 +1,21 @@
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+	<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
 
-
-<div class="container">
-  <h3>Dashboard</h3>
+<div class="container mainapp">
+  <h3><i class="fa fa-align-left"></i>InvoiceApp</h3>
   <hr>
 
 
-   <app-invoice-display [listInvoice] ="listInvoice" ></app-invoice-display>
-  <app-invoice [person] = "person"  (billSubmitted) = "onRecieveInvoiceData($event)"  ></app-invoice>
+<!--   <app-invoice-display  ></app-invoice-display>
+<app-invoice [person] = "person"  (billSubmitted) = "onRecieveInvoiceData($event)"  ></app-invoice>
+   <app-invoice></app-invoice>
 
   <app-people (formSubmitted)= "onRecievePeopleData($event)" ></app-people>
+  <app-people></app-people>-->
+
+<router-outlet></router-outlet>
+
 </div>
 

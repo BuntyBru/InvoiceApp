@@ -1,3 +1,5 @@
+
+<button class="btn btn-success" type="button" routerLink ='/people'  (click) = "goBack()">New Invoice</button>
 <div class="row">
 	<div class="col-md-4">
 
@@ -14,17 +16,19 @@
 			</span>
 		</a>-->
 		<div class="list-group-item clearfix" style="cursor:pointer" *ngFor="let invoice of listInvoice" (click)="onSelectInvoice(invoice)">
+		
 			<div class="pull-left">
-				<h4 class="list-group-item-heading">INV # {{ invoice.personAssociated.orderNumber }} </h4>
+				<h4 class="list-group-item-heading"><strong>INV # {{ invoice.personAssociated.orderNumber }} </strong></h4>
 				<p class="list-group-item-text">Items - {{invoice.invoiceList.length}}</p>
 				<p class="list-group-item-text">{{invoice.personAssociated.name}}</p>
 			</div>
 			<span class="pull-right">
-				<h5 class="list-group-item-heading"> {{invoice.timestamp | date:'h:mm a,EEEE'}} </h5>
+				<h5 class="list-group-item-heading"> {{invoice.timestamp | date:'MMM d, y'}} </h5>
 				<br>
-				<p class="list-group-item-text"> &#8377; {{invoice.GrandTotal}}</p>
+				<p class="list-group-item-text grandTotal"> &#8377; {{invoice.GrandTotal}}</p>
 			</span>
 		</div>
+
 	</div>
 
 	<div class="col-md-8">

@@ -6,11 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Create New Invoice</a>
+    
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a>Order No <span> {{person.orderNumber}} </span></a></li>
+        <li><a  class="orderNo" >Order No <span> {{this.person.orderNumber}} </span></a></li>
       </ul>
      	
     </div>
@@ -24,8 +24,8 @@
     <h4></h4>
   </div>
   <div class="col-sm-6 text-right">
-  <h4>Customer Details</h4>
-  <h4> {{person.name}} </h4>
+  <h4><strong><u>CUSTOMER DETAILS</u></strong></h4>
+  <h4> {{this.person.name}} </h4>
   
     
   </div>
@@ -34,10 +34,10 @@
 
 <div class="row">
   <div class="col-sm-6">
-  <h4>PRODUCT DETAILS</h4>
+  <h4><strong><u>PRODUCT DETAILS</u></strong></h4>
   </div>
   <div class="col-sm-6 text-right">
-  <h4> {{person.email}} </h4>
+  <h4> {{this.person.email}} </h4>
   </div>
 
 </div>
@@ -183,7 +183,7 @@
 </div>
 
 <div class="col-sm-4" >
-<button class="btn btn-primary form-control" type="submit" (click) = "onSave(f,k)" [disabled]= "!f.submitted" #k>SAVE</button>
+<button class="btn btn-primary form-control" type="submit" (click) = "onSave(f,k)" [disabled]= "!f.submitted" #k  routerLink ="/invoice-display">SAVE</button>
 </div>
 
 

@@ -1,4 +1,4 @@
-
+<div class="container mainBack">
 
 <nav class="navbar">
   <div class="container-fluid">
@@ -8,11 +8,10 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Create New Invoice</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li><a>Order No <span> {{orderNumber}} </span></a></li>
+        <li><a class="orderNo">Order No <span> {{this.dataService.orderNumber}} </span></a></li>
       </ul>
      	
     </div>
@@ -24,7 +23,7 @@
   </div>
   	
   	<div class="col-sm-6">
-  		<button type="button" class="btn btn-primary" style="float: right;">Skip</button>
+
   	</div>
   </div>
   <hr>
@@ -101,7 +100,8 @@
  
 </div>
  <footer class="container" class="text-right">
-	<button type="submit" class="btn btn-primary"  [disabled] = "!pf.valid">Proceed</button>
+	<button type="button" class="btn btn-primary" routerLink='/invoice' (click)="onProceed(pf)"  [disabled] = "!pf.valid">Proceed</button>
 </footer> 
 
 </form> 
+</div>

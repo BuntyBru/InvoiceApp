@@ -7,6 +7,18 @@ import { InvoiceItemsComponent } from './invoice-display/invoice-items/invoice-i
 import { PeopleComponent } from './people/people.component';
 import { InvoiceComponent } from './invoice/invoice.component';
 import { PreviewComponent } from './invoice-display/invoice-items/preview/preview.component';
+import { Routes, RouterModule } from '@angular/router';
+
+import { DataService } from './data.service';
+
+const appRoutes:Routes = [
+{path:'',component:PeopleComponent},
+{path:'people', component: PeopleComponent},
+{path:'invoice', component: InvoiceComponent},
+{path:'invoice-display',component:InvoiceDisplayComponent}
+
+
+];
 
 @NgModule({
   declarations: [
@@ -19,9 +31,10 @@ import { PreviewComponent } from './invoice-display/invoice-items/preview/previe
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

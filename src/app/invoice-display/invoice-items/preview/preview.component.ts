@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Invoice } from 'src/app/invoice-display/invoice.model';
 import { Input } from '@angular/core';
 import { SimpleChanges } from '@angular/core';
+import { DataService } from '../../../data.service';
+
+
 
 @Component({
   selector: 'app-preview',
@@ -11,7 +14,10 @@ import { SimpleChanges } from '@angular/core';
 export class PreviewComponent implements OnInit {
   
   @Input() selectedInvoice:Invoice = new Invoice();
-  constructor() { }
+  constructor() {
+
+
+   }
   ngOnInit() {
   }
   ngOnChanges(changes: SimpleChanges) {

@@ -22,15 +22,6 @@ export class AppComponent implements OnInit {
 
   }
 
-  onRecievePeopleData($event) {
-
-    this.person.name = $event.name;
-    this.person.email = $event.email;
-    this.person.address = $event.address;
-    this.person.pincode = $event.pincode;
-    this.person.phone = $event.phone;
-    this.person.orderNumber = $event.orderNumber;
-  }
 
 
 
@@ -50,6 +41,6 @@ export class AppComponent implements OnInit {
     this.listInvoice = this.listInvoice.slice();
     this.invoice1 = invoice1;
 
-    console.log(this.listInvoice);
+    //console.log(this.listInvoice);
   }
 }
